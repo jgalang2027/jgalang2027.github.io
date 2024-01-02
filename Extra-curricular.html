@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra-curricular</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-eC03b54Bn2kTuhvxPzZfNwS2IrjKpp5OWFMEATHGU9h5p4szp/TyPiW1dgsh+PCE" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300&family=Lexend+Deca:wght@300&family=Unna&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/82989b14ef.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lexend Deca', Sans;
+            background-image: url(clubs.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 12vh;
+            margin: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 12vh;
+            display: flex;
+            align-items: center;
+            background-color: #16227bd5;
+            padding: 0 3vw;
+            z-index: 999;
+
+        }
+
+        .navbar a {
+            color: #ffffff;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+
+        .navbar a:hover {
+            font-weight: bold;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        .schoollogo img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .sidebar {
+            position: fixed;
+            width: 350px;
+            height: calc(100vh - 12vh);
+            top: 12vh;
+            left: -350px;
+            background-color: rgba(0, 0, 0, 0.384);
+            padding-top: 20px;
+            overflow-y: auto;
+            transition: .5s ease;
+        }
+        .activities h1,
+        .clubs-sidebar h1 {
+            font-family: 'Lexend Deca', Sans;
+            margin-left: 15px;
+            color: #ffffff;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .activities a {
+            background-color: #ffffff;
+            font-family: 'Lexend Deca', sans-serif;
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            text-align: left;
+            border-radius: 10px;
+            padding: 15px;
+            padding-right: 15px;
+            line-height: 1.5;
+            color: #4688E5;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-bottom: 15px;
+            display: block;
+
+        }
+
+        .activities a:hover {
+            color: #437fd3;
+            background-color: #cecece;
+        }
+
+        .activities a[href="#"]:active,
+        .activities a[href="#"]:visited {
+            background-color: #437fd3;
+            color: rgb(255, 255, 255);
+        }
+
+        .activities a span {
+            display: block;
+            font-size: 13px;
+            color: rgb(0, 0, 0);
+        }
+
+        .column1 {
+            padding: 10px;
+        }
+
+        .column2 {
+            display: flex;
+                justify-content: center; 
+                align-items: center; 
+                padding-top: 100px;
+                padding-left: 15px;
+                box-sizing: border-box;
+                overflow-y: auto;
+                margin: 10px;
+        }
+
+        .clubs {
+            position: relative;
+            width: 99%;
+            background-color: #ffffff8a;
+            height: auto;
+            padding: 15px;
+            padding-bottom: 30px;
+            border-radius: 10px;
+            text-align: right;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        .image {
+            display: block;
+            width: 100px;
+            height: 100px;
+
+        }
+
+        .clubs h1 {
+            color: #16227bd5;
+            font-size: 30px;
+            margin-left: 3px;
+        }
+
+        .clubs p {
+            display: block;
+            width: 95%;
+            font-size: 18px;
+            text-align: left;
+            margin-left: 20px;
+            margin-top: 40px;
+            margin-right: 40px;
+            font-family: 'Lexend Deca';
+            margin-bottom: 15px;
+            height: 100%;
+        }
+
+        .clubs img {
+            margin-top: 2px;
+            margin-left: 2px;
+        }
+
+        .clubs a {
+            font-size: 30px;
+            color: #ffffffd5;
+            text-decoration: none;
+            font-weight: bolder;
+            background-color: #3547d1d5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .clubs a:hover {
+            background-color: #29369bd5;
+        }
+        .clubs img{
+            width: 80px;
+            height: 80px;
+        }
+        .clubs-sidebar img {
+            margin-left: 15px;
+            background-color: #ffffff;
+            padding: 4px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        .clubs-sidebar img:hover {
+            background-color: #d6d6d6;
+        }
+        .flex {
+            display: flex;
+        }
+        #check{
+            display: none;
+        }
+        label #btn, label #cancel{
+            position: fixed;
+            cursor: pointer;
+
+        }
+        label #btn{
+            left: 40px;
+            top: 150px;
+            font-size: 35px;
+            color: white;
+            transition: .5s ease;
+        }
+        label #cancel{
+            z-index: 1111;
+            left: -250px;
+            top: 127px;
+            font-size: 30px;
+            color: white;
+            transition: .5s ease;
+        }
+        #check:checked ~ .sidebar{
+            left:0;
+        }
+        #check:checked ~ label #btn{
+            left:250px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        #check:checked ~ label #cancel{
+            left:300px;
+        }
+        @media (max-width: 390px) and (max-height: 844px) {
+                .navbar {
+                    padding: 0;
+            }
+            .clubs{
+                    width: 90%;
+                    margin-right: 5px;
+                }
+            }
+            
+            @media (min-width: 768px) and (max-height: 1024px) {
+                .navbar {
+                    padding: 0 3vw;
+                }
+                .background-image{
+                    width: auto;
+                    height: 100%;
+                }
+                .content-container{
+                    width: 90%;
+                }
+
+            }
+    </style>
+</head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="schoollogo">
+                    <img src="biglogo.png" width="100" height="100" alt="schoollogo">
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="Courses.html">Courses</a>
+                    <a href="Tasks.html">Tasks</a>
+                    <a href="Contacts.html">Contacts</a>
+                    <a href="About.html">About</a>
+                    <a class="Extra-curricular active" href="#">Extra-curricular</a>
+                </nav>
+            </div>
+        <div class="column2">
+            <div class="content-container">
+                <div class="main-course">
+                    <div class="clubs">
+                        <div class="flex">
+                            <img src="18.png" width="50" height="50" class="image" alt="volleyball">
+                            <h1>|Spikers|</h1>
+                        </div>
+                        <p>Welcome to the Spikers Club, where passion for volleyball meets a community of spirited
+                        players dedicated to the exhilarating sport. At Spikers, we're more than just a club;
+                        we're a close-knit family bound by the love of the game. Whether you're a seasoned
+                        player or new to the court, our club offers a dynamic space to hone your skills, build
+                        lasting friendships, and embrace the thrill of competitive play. Join us as we spike,
+                        serve, and dive into the exciting world of volleyball. It's not just a game; it's a
+                        lifestyle at Spikers Club, where every point is a celebration and every teammate is a
+                        valued part of our winning team.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMA18gP0_JVZ-Ts50ZJ9HrKFPo9M--AWnLv45VWvkNYJHqYw/viewform?usp=sf_link">Join
+                            Now
+                        </a>
+                    </div>
+                    <div class="clubs">
+                        <div class="flex">
+                            <img src="22.png" width="80" height="80" class="image" alt="volleyball">
+                            <h1>|Hoops n' Dunks|</h1>
+                        </div>
+                        <p>Welcome to Hoops and Dunks Basketball Club, where the rhythm of dribbles and the echo of
+                        swishing nets define our court. At Hoops and Dunks, basketball isn't just a game; it's a
+                        culture, a way of life. Whether you're a sharpshooter, a tenacious defender, or a fan
+                        cheering from the sidelines, our club welcomes everyone to a community of hoop
+                        enthusiasts. Join us for thrilling games, skill development sessions, and the undeniable
+                        camaraderie that comes with the love of basketball. We're more than a club; we're a
+                        team, united by the passion for those perfect dunks and game-changing hoops. So, grab
+                        your sneakers, hit the court, and let's make every dribble, pass, and dunk count at
+                        Hoops and Dunks Basketball Club.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVS1hFubLqKYAwqVeruLluTh05d3HwIL81pN2dnBCZ5ss49Q/viewform?usp=sf_link">Join
+                            Now
+                        </a>
+                    </div>
+                    <div class="clubs">
+                        <div class="flex">
+                            <img src="19.png" width="80" height="80" class="image" alt="volleyball">
+                            <h1>|Kicks|</h1>
+                        </div>
+                        <p>Welcome to Kicks, where the heartbeat of soccer echoes through every goal and the
+                        camaraderie on and off the pitch defines our spirit. Kicks is not just a soccer club;
+                        it's a passionate community united by the beautiful game. Whether you're a skillful
+                        striker, a tenacious defender, or simply a fan of the sport, Kicks welcomes you to a
+                        world of thrilling matches, skill development, and lasting connections. Our club
+                        embodies the essence of teamwork, fair play, and the sheer joy of kicking the ball. Join
+                        us in embracing the excitement, the competition, and the sheer exhilaration that soccer
+                        brings. At Kicks, we kick it up a notch, making every match an unforgettable experience.
+                        Lace up your boots, feel the energy, and let's create soccer moments together!</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqYh3r4RdipsRfiPw1rvPo0BxwSQbXh2mc4RRaiH8ConyNwg/viewform?usp=sf_link">Join
+                            Now
+                        </a>
+                    </div>
+                    <div class="clubs">
+                        <div class="flex">
+                            <img src="23.png" width="80" height="80" class="image" alt="volleyball">
+                            <h1>|The Irrational|</h1>
+                        </div>
+                        <p>Welcome to "The Irrational" Math Club, where numbers come alive, and equations tell
+                        captivating stories! Embrace the allure of the irrational with us as we explore the
+                        intriguing world of mathematical wonders. Whether you're a seasoned problem solver or
+                        just starting your journey into the beauty of numbers, our club provides a vibrant space
+                        to unravel mysteries, share insights, and foster a community united by a love for the
+                        elegance and complexity of mathematics. Join us in unraveling the secrets of pi, the
+                        golden ratio, and beyond, as we embark on a journey that transcends the ordinary and
+                        celebrates the extraordinary in the realm of numbers.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqDnMm4kD1jw5wklR3WRmfjYmSOdo4qT8hdh4SqXvXW0ujuQ/viewform?usp=sf_link">Join
+                            Now
+                        </a>
+                    </div>
+                    <div class="clubs">
+                        <div class="flex">
+                            <img src="20.png" width="80" height="80" class="image" alt="volleyball">
+                            <h1>|P6|</h1>
+                        </div>
+                        <p>Welcome to P6, where the wonders of the physical world come to life through the lens of
+                        the Physics Club. P6 isn't just an ordinary club; it's a dynamic space where curiosity
+                        meets discovery, and the principles of physics become the building blocks of
+                        understanding. Whether you're fascinated by the laws of motion, captivated by the
+                        mysteries of the cosmos, or simply curious about the forces that shape our reality, P6
+                        invites you to join a community of enthusiastic minds. Through hands-on experiments,
+                        engaging discussions, and explorations of the fundamental laws governing our universe,
+                        we aim to make physics not only comprehensible but downright exhilarating. So, buckle up
+                        for a journey through the realms of energy, matter, and motion as we unravel the secrets
+                        of the physical world together at P6 Physics Club.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMHiEs-V0ds_Hojss9SayIixU0co9TSmadYeezYI2ZSh6GJQ/viewform?usp=sf_link">Join
+                                Now
+                        </a>
+                    </div>
+                    <div class="clubs">
+                        <div class="flex">
+                            <img src="24.png" width="80" height="80" class="image" alt="volleyball">
+                            <h1>|Keme lang|</h1>
+                        </div>
+                        <p>Welcome to "Keme Lang," where the magic of molecules and the excitement of chemical
+                        reactions take center stage in our Chemistry Club. "Keme Lang" translates to "Just
+                        Chemistry," but for us, it's not just about the elements; it's about the extraordinary
+                        world they create. Whether you're captivated by the periodic table, thrilled by
+                        experiments in the lab, or simply curious about the molecular dance happening around us,
+                        our club welcomes all chemistry enthusiasts. Join us for hands-on experiments, engaging
+                        discussions, and a community that turns the complexity of chemistry into an accessible
+                        and enjoyable adventure. "Keme Lang" is more than just a club; it's a space where the
+                        language of atoms comes alive, and the wonders of chemistry unfold. Get ready to dive
+                        into the fascinating world of molecules, reactions, and discoveries with "Keme Lang"
+                        Chemistry Club. Let the chemical journey begin!</p>
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSduq7xds5XzkelqN_BgzkA_cFUPrSVNRdebXnRmar8bnWXoKw/viewform?usp=sf_link">Join
+                            Now
+                        </a>
+                    </div>
+                    <div class="clubs">
+                        <div class="flex">
+                            <img src="21.png" width="80" height="80" class="image" alt="volleyball">
+                            <h1>|Biohazards|</h1>
+                        </div>
+                        <p>Welcome to "The Biohazards" Bio Club! Embark on a thrilling adventure into the
+                        microscopic wonders of life with us. Whether you're captivated by the intricate world of
+                        DNA, fascinated by ecosystems, or simply curious about the mysteries of biology, our
+                        club is the perfect place for exploration and discovery. Dive into engaging discussions,
+                        hands-on experiments, and join a community passionate about unraveling the complexities
+                        of life on Earth. From the tiniest organisms to the interconnected web of biodiversity,
+                        "The Biohazards" is where biology comes to life. Let's cultivate a love for the living
+                        world, share insights, and foster a community committed to understanding the
+                        awe-inspiring biohazards that surround us every day.</p>
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSdpU374lPgwsnakdlJN5S7OBPZSSRCcTUFBL-Xd1EvXFhKS0A/viewform?usp=sf_link">Join
+                            Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column1">
+            <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                    <i class="fas fa-times" id="cancel"></i>
+                </label>
+                <div id="sidebar" class="sidebar">
+                    <div class="sidebar-content">
+                        <div class="activities">
+                            <h1>Activities</h1>
+                            <a href="#">
+                                Clubs
+                            </a>
+                            <a href="Competitions.html">
+                                Competitions
+                            </a>
+                            <a href="Schoolactivities.html">
+                                School Activities
+                            </a>
+                        </div>
+                        <div class="clubs-sidebar">
+                            <h1>Sign-up Forms</h1>
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSfMA18gP0_JVZ-Ts50ZJ9HrKFPo9M--AWnLv45VWvkNYJHqYw/viewform?usp=sf_link"><img
+                                    src="18.png" width="140" height="140" alt="volleyball on fire"></a>
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSfqYh3r4RdipsRfiPw1rvPo0BxwSQbXh2mc4RRaiH8ConyNwg/viewform?usp=sf_link"><img
+                                    src="19.png" width="140" height="140" alt="soccerball in net"></a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMHiEs-V0ds_Hojss9SayIixU0co9TSmadYeezYI2ZSh6GJQ/viewform?usp=sf_link
+                            "><img src="20.png" width="140" height="140" alt="physics lineart"></a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpU374lPgwsnakdlJN5S7OBPZSSRCcTUFBL-Xd1EvXFhKS0A/viewform?usp=sf_link"><img src="21.png" width="140" height="140" alt="humanbody"></a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVS1hFubLqKYAwqVeruLluTh05d3HwIL81pN2dnBCZ5ss49Q/viewform?usp=sf_link"><img src="22.png" width="140" height="140" alt="dunking guy"></a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqDnMm4kD1jw5wklR3WRmfjYmSOdo4qT8hdh4SqXvXW0ujuQ/viewform?usp=sf_link"><img src="23.png" width="140" height="140" alt="brain math"></a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSduq7xds5XzkelqN_BgzkA_cFUPrSVNRdebXnRmar8bnWXoKw/viewform?usp=sf_link"><img src="24.png" width="140" height="140" alt="chemical bonds"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

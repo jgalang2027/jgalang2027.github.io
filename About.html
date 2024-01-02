@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300&family=Lexend+Deca:wght@300&family=Unna&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/5b8f3d60a2.js" crossorigin="anonymous"></script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Lexend Deca', sans-serif;
+                background-image: url(bg.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding-top: 12vh;
+                margin: 0;
+            }
+            .navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                height: 12vh;
+                display: flex;
+                align-items: center;
+                
+                background-color: #16227bd5;
+                padding: 0 50px;
+                z-index: 999;
+
+            }
+            .navbar a {
+                color: #ffffff;
+                font-size: 15px;
+                text-decoration: none;
+                padding: 0 15px;
+            }
+            .navbar a:hover {
+                font-weight: bold;
+            }
+
+            .active {
+                font-weight: bold;
+            }
+
+            .schoollogo img {
+                width: 100px;
+                height: 100px;
+            }
+            .sidebar {
+                position: fixed;
+                width: 350px;
+                height: calc(100vh - 12vh);
+                top: 12vh;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.384);
+                padding-top: 20px;
+                overflow-y: auto;
+            }
+            .content {
+                margin: 0 auto;
+                padding: 20px;
+                width: 60%; 
+            }
+
+            .main-course h1 {
+                text-align: center;
+                color: #434f94;
+                font-size: 40px;
+                font-weight: bolder;
+            }
+
+            .main-course h2 {
+                text-align: center;
+                margin-bottom: 50px;
+                color: #ffffff;
+                font-size: 30px;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            .box1 p {
+                color: black;
+                margin-bottom: 5px;
+                line-height: 2;
+                font-size: 20px;
+            }
+            .box2 p {
+                color: black;
+                margin-bottom: 5px;
+                line-height: 2;
+                font-size: 15px;
+            }
+            .box3 p {
+                color: black;
+                margin-bottom: 5px;
+                line-height: 2;
+                font-size: 20px;
+            }
+            .box4 p {
+                color: black;
+                margin-bottom: 5px;
+                line-height: 2;
+                font-size: 20px;
+            }
+            .box5 p {
+                color: black;
+                margin-bottom: 5px;
+                line-height: 2;
+                font-size: 18px;
+            }
+            .main-course p{
+                margin-bottom: 20px;
+            }
+            .box1 {
+                background-color: #ffffff96;
+                font-family: 'Lexend Deca', sans-serif;
+                width: 85%;
+                margin: 100px auto 30px; 
+                border-radius: 10px; 
+                padding: 15px;
+                padding-right: 15px;
+            }
+            .box2 {
+                background-color: #ffffff96;
+                font-family: 'Lexend Deca', sans-serif;
+                width: 85%;
+                margin: 100px auto 30px;
+                border-radius: 10px; 
+                padding: 15px;
+                padding-right: 15px;
+            }
+            .box3 {
+                background-color: #ffffff96;
+                font-family: 'Lexend Deca', sans-serif;
+                width: 80%;
+                margin: 100px auto 30px; 
+                border-radius: 10px; 
+                padding: 15px;
+                padding-right: 15px;
+                text-align: center;
+                font-style: italic;
+            }
+            .box4 {
+                background-color: #ffffff96;
+                font-family: 'Lexend Deca', sans-serif;
+                width: 80%;
+                margin: 100px auto 30px; 
+                border-radius: 10px; 
+                padding: 15px;
+                padding-right: 15px;
+                text-align: center;
+                font-style: italic;
+            }
+            .box5 {
+                background-color: #ffffff96;
+                font-family: 'Lexend Deca', sans-serif;
+                width: 80%;
+                margin: 100px auto 30px; 
+                border-radius: 10px; 
+                padding: 15px;
+                padding-right: 15px;
+            }
+            .main-course span:hover{
+                color: #6f79ff;
+            }
+            .flex {
+            display: flex;
+            text-align: center;
+            }
+            .clubs p {
+            display: block;
+            width: 95%;
+            font-size: 25px;
+            text-align: left;
+            margin-left: 20px;
+            margin-top: 30px;
+            margin-right: 40px;
+            font-family: 'Lexend Deca';
+            margin-bottom: 15px;
+            height: 100%;
+        }
+        .clubs span{
+            font-weight: bolder;
+            margin-right: 20px;
+            font-size: 30px;
+        }
+        .clubs h2 {
+            font-size: 30px;
+            color: #5a5a5a;
+            text-decoration: none;
+            font-weight: bolder;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .clubs h1 {
+            color: #16227bd5;
+            font-size: 45px;
+            margin-left: 10px;
+            text-align: center;
+        }
+        .clubs {
+            position: relative;
+            background-color: #ffffff81;
+            height: auto;
+            padding: 15px;
+            padding-bottom: 30px;
+            text-align: right;
+            overflow: hidden;
+            margin-bottom: 20px;
+            width: 85%;
+            margin: 50px auto 30px; 
+            border-radius: 10px; 
+        }
+        .admin h2 {
+            font-size: 30px;
+            color: #585858;
+            text-decoration: none;
+            font-weight: bolder;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .admin h1 {
+            color: #16227bd5;
+            font-size: 45px;
+            margin-left: 10px;
+            text-align: center;
+        }
+        .admin {
+            position: relative;
+            background-color: #ffffff81;
+            height: auto;
+            padding: 15px;
+            padding-bottom: 30px;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 20px;
+            width: 85%;
+            margin: 50px auto 30px; 
+            border-radius: 10px; 
+        }
+        .admin p{
+            color: #313131;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+        .head{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+            @media (max-width: 390px) and (max-height: 844px) {
+                .navbar {
+                    padding: 0;
+            }
+            .clubs{
+                    width: 95%;
+                    margin-right: 5px;
+                }
+            }
+            @media (min-width: 391px) and (max-height: 768px) {
+                .navbar {
+                    padding: 0 20px;
+                }
+            }
+            @media (min-width: 768px) and (max-height: 1024px) {
+                .navbar {
+                    padding: 0 30px;
+                }
+                .background-image{
+                    width: auto;
+                    height: 100%;
+                }
+                .content-container{
+                    width: 95%;
+                }
+
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="schoollogo">
+                    <img src="biglogo.png" width="100" height="100" alt="schoollogo">
+                </div>
+                    <nav>
+                        <a href="index.html">Home</a>
+                        <a href="Courses.html">Courses</a>
+                        <a href="Tasks.html">Tasks</a>
+                        <a href="Contacts.html">Contacts</a>
+                        <a class="About active" href="#">About</a>
+                        <a href="Extra-curricular.html">Extra-curricular</a>
+                    </nav>
+            </div>
+            <div class="box1">
+                <div class="content-container">
+                    <div class="main-course">
+                        <h1>Stellar Horizons University</h1>
+                        <h2>"To traverse in a galaxy of stellar minds"</h2>
+                        <p>Welcome to Stellar Horizons University, a beacon of academic excellence and innovation. At SHU, we cultivate a dynamic learning environment where intellectual curiosity meets transformative education. Our commitment to fostering well-rounded individuals extends beyond classrooms, embracing diversity, inclusion, and a global perspective. From the arts to the sciences, our comprehensive programs empower students to explore, create, and contribute to the ever-evolving tapestry of knowledge. With a faculty dedicated to mentorship and research, and a vibrant campus life that nurtures leadership and community engagement, Stellar Horizons University is not just a place of learning; it's a launchpad for ambitious minds seeking to reach new intellectual heights and make a positive impact on the world. Welcome to a university where the possibilities are as vast as the horizons we inspire our students to explore.</p>
+                        <p>Stellar Horizons University, founded in 1960, emerged as a beacon of academic excellence amidst a rapidly changing world. Initially established to meet the growing demand for innovative scientific education, SHU quickly expanded its curriculum to embrace diverse disciplines, fostering a culture of exploration and intellectual curiosity. Over the decades, the university's commitment to cutting-edge research and technology has propelled it to the forefront of scientific breakthroughs, with notable contributions in space exploration, robotics, and environmental sustainability. Today, Stellar Horizons University stands as a testament to the power of education to propel humanity toward new frontiers of knowledge and discovery</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="content-container">
+                    <div class="main-course">
+                        <h1>HOW TO APPLY?</h1>
+                        <p>1. Recent 1 x 1 Pictures (At most 6 months old)</p>
+                        <p>2. Certified true copy of Grade 12 Report Card </p>
+                        <p>3. Letters of reccomendation</p>
+                        <p>4. Personal Statement</p>
+                        <p>5. IELTS Score of at least 8</p>
+                        <p>6. Birth Certificate and Recent Legal Documents (Passport, Driver's License, etc.)</p>
+                        <p>7. Send these requirements to the email <span>"shu_ph@main.shu.int"</span> and wait for our reply for further details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box3">
+                <div class="content-container">
+                    <div class="main-course">
+                        <h1>Vision</h1>
+                        <p>Stellar Horizons University envisions a future where education transcends boundaries, creating leaders who drive positive change in the world. We aspire to be recognized globally for our commitment to excellence in teaching, research, and community engagement. Our vision is to be a hub of innovation and collaboration, shaping the next generation of thought leaders who tackle complex challenges with creativity, compassion, and a deep sense of responsibility.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="box4">
+                <div class="content-container">
+                    <div class="main-course">
+                        <h1>Mission</h1>
+                        <p>Stellar Horizons University is dedicated to fostering a transformative learning environment that empowers students to reach their full potential. Our mission is to cultivate intellectual curiosity, promote critical thinking, and instill a commitment to lifelong learning. Through innovative education and a diverse community, we aim to inspire individuals to become ethical leaders, global citizens, and contributors to the advancement of knowledge and society.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box5">
+                <div class="content-container">
+                    <div class="main-course">
+                        <h1>Rationale</h1>
+                        <p>1. We strive for academic excellence by providing rigorous and relevant programs that equip students with the knowledge, skills, and perspectives needed for success in a rapidly evolving world.</p>
+                        <p>2. We foster a culture of innovation and inquiry, encouraging faculty and students to engage in cutting-edge research that addresses real-world problems and contributes to the advancement of knowledge.</p>
+                        <p>3. Stellar Horizons University values and celebrates diversity in all its forms. We believe that a diverse and inclusive community enriches the learning experience, fosters understanding, and prepares students to thrive in a global society.</p>
+                        <p>4. Our commitment to developing global citizens is reflected in our emphasis on cross-cultural understanding, international collaborations, and programs that prepare students to navigate the complexities of a interconnected world.</p>
+                        <p>5. We recognize the importance of holistic development. Beyond academics, we support students in their personal growth by providing opportunities for leadership, community service, and extracurricular activities.</p>
+                        <p>6. Stellar Horizons University is dedicated to nurturing ethical leaders who lead with integrity, empathy, and a commitment to social responsibility. Our graduates are prepared to make positive contributions to their communities and the world.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="head">
+                <h1>Teachers</h1>
+            </div>
+            <div class="clubs">
+                <div class="flex">
+                    <img src="teacher4.PNG" width="150" height="150" class="image" alt="old teacher">
+                    <h1>Jara Aika</h1>
+                </div>
+                <p><span>Position</span>Special Science Teacher IV</p>
+                <p><span>Subject</span>Holistic Philosophy</p>
+                <p><span>Date of Birth</span>May 17, 1983</p>
+                <p><span>Age</span>40 Years Old</p>
+                <p><span>Education</span>Bachelor of Arts in Philosophy De La Salle University, Master of Arts in Philosophy De La Salle University </p>
+                <h2>jaika@main.shu.int</h2>
+            </div>
+            <div class="clubs">
+                <div class="flex">
+                    <img src="teacher5.PNG" width="150" height="150" class="image" alt="pretty teacher">
+                    <h1>Gina Jenmar</h1>
+                </div>
+                <p><span>Position</span>Special Science Teacher II</p>
+                <p><span>Subject</span> Information Technology</p>
+                <p><span>Date of Birth</span>November 4, 1994</p>
+                <p><span>Age</span>29 Years Old</p>
+                <p><span>Education</span>Bachelor of Science in Computer Engineering Ateneo de Naga University, Master in Computer Engineering Ateneo de Naga University</p>
+                <h2>gjenmar@main.shu.int</h2>
+            </div>
+            <div class="clubs">
+                <div class="flex">
+                    <img src="teacher1.PNG" width="150" height="150" class="image" alt="guy teacher">
+                    <h1>Najorn Lisoriz</h1>
+                </div>
+                <p><span>Position</span>Special Science Teacher III</p>
+                <p><span>Subject</span>Advanced Mathematics</p>
+                <p><span>Date of Birth</span> April 16, 1988</p>
+                <p><span>Age</span>35 Years Old</p>
+                <p><span>Education</span>B.Sc. Mathematics. University of the Philippines Diliman, Master of Science (Mathematics) University of the Philippines Diliman</p>
+                <h2>nlisoriz@main.shu.int</h2>
+            </div>
+            <div class="clubs">
+                <div class="flex">
+                    <img src="teacher2.PNG" width="150" height="150" class="image" alt="old teacher">
+                    <h1>Aila Jennika</h1>
+                </div>
+                <p><span>Position</span>Special Science Teacher I</p>
+                <p><span>Subject</span>Empirical Science - Biology</p>
+                <p><span>Date of Birth</span>December 22, 1970</p>
+                <p><span>Age</span>53 Years Old</p>
+                <p><span>Education</span>BS Biology University of Santo Tomas, Currently studying to obtain Masters in Biology at University of Santo Tomas</p>
+                <h2>ajennika@main.shu.int</h2>
+            </div>
+            <div class="clubs">
+                <div class="flex">
+                    <img src="teacher3.PNG" width="150" height="150" class="image" alt="pretty teacher">
+                    <h1>Nini Carmen</h1>
+                </div>
+                <p><span>Position</span>Special Science Teacher V</p>
+                <p><span>Subject</span>Literary Study</p>
+                <p><span>Date of Birth</span>February 4, 2001</p>
+                <p><span>Age</span>22 Years Old</p>
+                <p><span>Education</span>Bachelor of Arts in English Language and Literature Ateneo de Manila University, Master of Arts in English Language and Literature Ateneo de Manila University</p>
+                <h2>ncarmen@main.shu.int</h2>
+            </div>
+            <div class="head">
+                <h1>Administrators</h1>
+            </div>
+            <div class="admin">
+                <img src="gian.PNG" width="300" height="300" class="image" alt="gian pic">
+                <h1>Gian Quirsten C. Ramirez</h1>
+                <h2>Executive Director</h2>
+                <p>"See challenges as chances to grow; your potential knows no bounds."</p>
+            </div>
+            <div class="admin">
+                <img src="jai.PNG" width="300" height="300" class="image" alt="gian pic">
+                <h1>Jaila Linnea B. Galang</h1>
+                <h2>Administrative Manager</h2>
+                <p>"Curiosity fuels knowledge. Ask, explore, and let it guide you to new heights."
+                </p>
+            </div>
+            <div class="admin">
+                <img src="johann.PNG" width="300" height="300" class="image" alt="gian pic">
+                <h1>Johann Sebastian H. Silloriquez</h1>
+                <h2>Operations Manager</h2>
+                <p>"Measure success not just in grades, but in resilience, character, and positive impact on others."</p>
+            </div>
+        </div>
+    </body>
+</html>
